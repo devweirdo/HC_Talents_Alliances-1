@@ -282,3 +282,8 @@ SINNERS_CONFESION = Alliances(
 
 
 # Alliances with 5 Units
+
+
+ALLIANCES_COLLECTION = [
+    
+]
