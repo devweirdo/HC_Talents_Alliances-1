@@ -1,5 +1,4 @@
 from typing import List, Tuple
-import predefine as pd
 
 class Stats:
     def __init__(self, type: str, min_value: int, max_value: int) -> None:
@@ -29,20 +28,10 @@ class Alliances:
     def get_unit_class(self) -> Tuple:
         tank, mage, arch = 0, 0, 0
         for talent in self.attributes.values():
-            if talent.fighter_class == pd.TANK:
+            if talent.fighter_class == "TANK":
                 tank += 1
-            elif talent.fighter_class == pd.MAGE:
+            elif talent.fighter_class == "MAGE":
                 mage += 1
             else:
                 arch += 1
         return tank, mage, arch
-
-class AlliancesView:
-    def __init__(self, alliances: List[Alliances]) -> None:
-        self.alliances = {}
-        for alli in alliances:
-            self.alliances[alli.name] = alli
-
-    def get_all_alliances_by_team_form(self, tank_num: int, mage_num: int, arch_num: int) -> None:
-        self.tank, self.mage, self.arch = tank_num, mage_num, arch_num
-        
